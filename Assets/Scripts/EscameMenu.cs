@@ -31,7 +31,6 @@ public class EscameMenu : MonoBehaviour
 
     public void Resume()
     {
-        Debug.Log("blblblblbl");
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
