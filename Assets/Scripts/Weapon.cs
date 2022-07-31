@@ -12,28 +12,35 @@ public class Weapon : MonoBehaviour
     public float weaponRecoil;
     public int fireRate;
     public int bulletsPerShot;
-
     public float manaUsage = 0.14f;
-
     public AudioSource AudioSource;
-    
+
+    private int counter = 0;
+
+
+
     public void Fire()
     {
-        if (AudioSource.isPlaying == false)
+        if (counter % fireRate == 0)
         {
-            AudioSource.Play();
+            if (AudioSource.isPlaying == false)
+            {
+                AudioSource.Play();
+            }
+
+            for (int i = 0; i < bulletsPerShot; i++)
+            {
+                float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
+
+                GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
+                projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+                firePoint.rotation = qnt;
+            }
         }
-
-        for (int i = 0; i < bulletsPerShot; i++)
-        {
-            float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
-
-            GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
-            projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-
-            firePoint.rotation = qnt;
-        }
+        counter++;
     }
+    
 }
 
 
