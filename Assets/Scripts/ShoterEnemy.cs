@@ -33,6 +33,7 @@ public class ShoterEnemy : EnemyController
         {
             state = State.SHOOTING;
             weapon.Fire();
+            
         }
     }
 
@@ -40,6 +41,7 @@ public class ShoterEnemy : EnemyController
     {
         if (collision.gameObject.tag == "Player")
         {
+            weapon.AudioSource.Stop();
             state = State.CHASING;
         }
     }

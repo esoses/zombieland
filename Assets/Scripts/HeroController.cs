@@ -20,7 +20,7 @@ public class HeroController : MonoBehaviour
     public float hpRegen = 1f;
     public HealthBar hp;
 
-    private int counter = 0;
+    
 
     public float damageTakenPerFrame = 1;
     
@@ -41,11 +41,17 @@ public class HeroController : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy" || collision.tag == "Damaging Wall")
-        {
+        if ((collision.tag == "Enemy" && collision.isTrigger == false) || collision.tag == "Damaging Wall")
+        {            
             health -= damageTakenPerFrame;
             hp.SetHealth(health);
         }
+    }
+
+    public void DamagePlayer(float bulletDamage)
+    {
+        health -= bulletDamage;
+        hp.SetHealth(health);
     }
 
     public void PlayerFire()
@@ -74,14 +80,11 @@ public class HeroController : MonoBehaviour
             }
             mn.SetMana(mana);
             FaceMouse();
-            MoveHero();
+            MoveHero();                       
+            PlayerFire();
+            
+            
 
-            counter++;
-            if (counter % weapon.fireRate == 0)
-            {
-                PlayerFire();
-
-            }
 
             if (mana < maxMana)
             {

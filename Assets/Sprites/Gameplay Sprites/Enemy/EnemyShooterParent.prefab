@@ -99,12 +99,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd12fd775a310a4aab4a6d40c7f6995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 3173845393505104667, guid: 5a6bfb99923e8c940a1656f3d29f7b65, type: 3}
+  bullet: {fileID: 2530336034747573161, guid: 066a3577481786d45a549c75b227ddff, type: 3}
   firePoint: {fileID: 6307415030055826111}
   fireForce: 15
-  weaponRecoil: 0
-  fireRate: 1
-  bulletsPerShot: 5
+  weaponRecoil: 1
+  fireRate: 30
+  bulletsPerShot: 1
   manaUsage: 0
   AudioSource: {fileID: 5886904783300142422}
 --- !u!82 &5886904783300142422
