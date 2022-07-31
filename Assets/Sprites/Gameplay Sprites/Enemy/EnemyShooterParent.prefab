@@ -102,8 +102,8 @@ MonoBehaviour:
   bullet: {fileID: 2530336034747573161, guid: 066a3577481786d45a549c75b227ddff, type: 3}
   firePoint: {fileID: 6307415030055826111}
   fireForce: 15
-  weaponRecoil: 1
-  fireRate: 30
+  weaponRecoil: 2.5
+  fireRate: 10
   bulletsPerShot: 1
   manaUsage: 0
   AudioSource: {fileID: 5886904783300142422}

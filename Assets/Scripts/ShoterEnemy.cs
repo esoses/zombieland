@@ -18,14 +18,14 @@ public class ShoterEnemy : EnemyController
         }
     }
 
-    protected override void ChasePlayer()
+    /*protected override void ChasePlayer()
     {
         if (state == State.CHASING)
         {
             base.ChasePlayer();
         }
         
-    }
+    }*/
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -41,7 +41,7 @@ public class ShoterEnemy : EnemyController
     {
         if (collision.gameObject.tag == "Player")
         {
-            weapon.AudioSource.Stop();
+           
             state = State.CHASING;
         }
     }
