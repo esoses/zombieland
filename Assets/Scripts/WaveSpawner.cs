@@ -75,7 +75,7 @@ public class WaveSpawner : MonoBehaviour
         
         if (nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 0;
+            nextWave = 1;
             Debug.Log("All waves completed! Reseting wave count...");
             countMultiplayer += 0.5f;
             rateMultiplayer += 0.5f;

@@ -70,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 98896814540942443, guid: 8c7b2194c44f66848b90e8d97d0dda5a, type: 3}
       propertyPath: maxHitPoints
-      value: 300
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 98896814540942443, guid: 8c7b2194c44f66848b90e8d97d0dda5a, type: 3}
       propertyPath: enemyHealthBar
@@ -78,7 +78,7 @@ PrefabInstance:
       objectReference: {fileID: 2555006702165017204, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - target: {fileID: 98896814540942443, guid: 8c7b2194c44f66848b90e8d97d0dda5a, type: 3}
       propertyPath: moveSpeedRangeMax
-      value: 2.5
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 98896814540942443, guid: 8c7b2194c44f66848b90e8d97d0dda5a, type: 3}
       propertyPath: moveSpeedRangeMin

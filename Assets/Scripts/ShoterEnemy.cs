@@ -18,14 +18,7 @@ public class ShoterEnemy : EnemyController
         }
     }
 
-    /*protected override void ChasePlayer()
-    {
-        if (state == State.CHASING)
-        {
-            base.ChasePlayer();
-        }
-        
-    }*/
+    
 
     private void OnTriggerStay2D(Collider2D collision)
     {

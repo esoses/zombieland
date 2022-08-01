@@ -101,9 +101,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 2530336034747573161, guid: 066a3577481786d45a549c75b227ddff, type: 3}
   firePoint: {fileID: 6307415030055826111}
-  fireForce: 15
-  weaponRecoil: 2.5
-  fireRate: 10
+  fireForce: 9
+  weaponRecoil: 5
+  fireRate: 5
   bulletsPerShot: 1
   manaUsage: 0
   AudioSource: {fileID: 5886904783300142422}
@@ -119,7 +119,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 70e3198afc62bb341b1d96b88c8c68ec, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.51
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -555,7 +555,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.389278, y: -5.533707e-15}
   serializedVersion: 2
-  m_Radius: 20
+  m_Radius: 30
 --- !u!114 &8182336587450466946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 065490ae46014f24f8b9f3660c17cec3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHitPoints: 25
+  maxHitPoints: 30
   hpBar: {fileID: 7402382536711513411}
   parent: {fileID: 9177369397070941255}
   prefab: {fileID: 9177369397070941255}

@@ -8,6 +8,7 @@ TagManager:
   - Blocking
   - Damaging Wall
   - Bullet
+  - Bullet2
   layers:
   - Default
   - TransparentFX

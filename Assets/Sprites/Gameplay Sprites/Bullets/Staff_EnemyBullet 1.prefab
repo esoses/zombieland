@@ -154,4 +154,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForAttackinEnemies: 0
-  bulletDamage: 0.25
+  bulletDamage: 2

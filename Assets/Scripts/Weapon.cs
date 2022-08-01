@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
 {
     private Quaternion qnt = new Quaternion(0, 0, 0, 0);
 
+
     public GameObject bullet;
     public Transform firePoint;
     public float fireForce;
@@ -23,7 +24,7 @@ public class Weapon : MonoBehaviour
     {
         if (counter % fireRate == 0)
         {
-            if (AudioSource.isPlaying == false)
+            if (AudioSource.isPlaying == false && AudioSource != null)
             {
                 AudioSource.Play();
             }
