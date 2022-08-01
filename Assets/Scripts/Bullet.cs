@@ -25,7 +25,7 @@ public class Bullet : MonoBehaviour
             collision.gameObject.GetComponent<EnemyController>().DamageEnemy(bulletDamage);                                  
             Destroy(gameObject, 1);            
         }
-        if (collision.tag == "Player" && !collision.isTrigger)
+        if (collision.tag == "Player" && !collision.isTrigger && !isForAttackinEnemies)
         {
             collision.gameObject.GetComponent<HeroController>().DamagePlayer(bulletDamage);
             Destroy(gameObject);

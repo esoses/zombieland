@@ -82721,7 +82721,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0f0000000100000000000000
+    count: 0a0000000100000000000000
     rate: 7
     timeUntilNextWave: 10
   - name: 3
@@ -82738,7 +82738,7 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
     count: 190000000100000000000000
-    rate: 100
+    rate: 3
     timeUntilNextWave: 10
   - name: 5 - Hard
     enemy:
@@ -82753,7 +82753,7 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 020000001e00000000000000
+    count: 010000001e00000000000000
     rate: 2
     timeUntilNextWave: 10
   - name: 7
@@ -82761,7 +82761,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a000000050000000a000000
+    count: 0a000000010000000a000000
     rate: 10
     timeUntilNextWave: 10
   - name: 8
@@ -82771,7 +82771,7 @@ MonoBehaviour:
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
     count: 00000000000000000f000000
     rate: 0.75
-    timeUntilNextWave: 2
+    timeUntilNextWave: 10
   - name: 9
     enemy:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
@@ -82785,15 +82785,15 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000000000005000000
+    count: 030000000000000005000000
     rate: 2
-    timeUntilNextWave: 3
+    timeUntilNextWave: 20
   - name: 12 - Extreme
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 000000000000000000000000
+    count: 050000000500000001000000
     rate: 5
     timeUntilNextWave: 5
   - name: 11 - Extreme
@@ -82810,7 +82810,7 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
     count: 0a0000000100000000000000
-    rate: 1.75
+    rate: 1000
     timeUntilNextWave: 5
   - name: 14 - Extreme
     enemy:
@@ -83180,7 +83180,7 @@ GameObject:
   - component: {fileID: 711860294}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Blocking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83562,7 +83562,7 @@ GameObject:
   - component: {fileID: 836226662}
   - component: {fileID: 836226661}
   - component: {fileID: 836226660}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Border
   m_TagString: Damaging Wall
   m_Icon: {fileID: 0}
@@ -84974,7 +84974,7 @@ GameObject:
   - component: {fileID: 1435442299}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Untagged
+  m_TagString: Blocking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -85857,7 +85857,7 @@ GameObject:
   - component: {fileID: 2015033860}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Blocking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86320,7 +86320,7 @@ GameObject:
   - component: {fileID: 2128493308}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Untagged
+  m_TagString: Blocking
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -153,5 +153,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a66f1a3dcfdefb49a6511cbcd458358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isForAttackinEnemies: 0
+  isForAttackinEnemies: 1
   bulletDamage: 0.25
