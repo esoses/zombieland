@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2242304561938229456}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fire_Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2242304561938229457}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.134, z: 0}
+  m_LocalPosition: {x: 0, y: 0.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 2242304562111030937}
   - component: {fileID: 2242304562111030935}
   - component: {fileID: 2242304562111030936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2242304562111030932}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.14, y: 3.33, z: -0.16760173}
+  m_LocalPosition: {x: 1.05, y: 2.76, z: -0.16760173}
   m_LocalScale: {x: 6.3417997, y: 6.3417997, z: 1.2683599}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -134,6 +134,9 @@ MonoBehaviour:
   firePoint: {fileID: 2242304561938229456}
   fireForce: 5
   weaponRecoil: 10
+  fireRate: 1
+  bulletsPerShot: 5
+  manaUsage: 0.14
   AudioSource: {fileID: 2242304562111030936}
 --- !u!82 &2242304562111030936
 AudioSource:
@@ -245,7 +248,7 @@ GameObject:
   - component: {fileID: 2242304560846086711}
   - component: {fileID: 2857299885168143194}
   - component: {fileID: 2242304560846086709}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hero
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -259,7 +262,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2857299885168143196}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1199.78, y: 255.97, z: 0.16760173}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_ConstrainProportionsScale: 0
@@ -389,8 +392,10 @@ MonoBehaviour:
   weapon: {fileID: 2242304562111030935}
   maxMana: 100
   mana: 100
+  manaRegen: 1.5
   mn: {fileID: 0}
-  health: 100
   maxHealth: 100
+  health: 100
+  hpRegen: 1
   hp: {fileID: 0}
   damageTakenPerFrame: 1
