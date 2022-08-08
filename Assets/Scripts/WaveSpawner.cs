@@ -31,6 +31,8 @@ public class WaveSpawner : MonoBehaviour
     private float countMultiplayer = 1;
     private float rateMultiplayer = 1;
 
+    private int resetCount = 1;
+
     private void Start()
     {
         
@@ -79,6 +81,7 @@ public class WaveSpawner : MonoBehaviour
             Debug.Log("All waves completed! Reseting wave count...");
             countMultiplayer += 0.5f;
             rateMultiplayer += 0.5f;
+            resetCount += 1;
         }
         else
         {
@@ -93,34 +96,38 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)
     {
         state = SpawnState.SPAWNING;
-        Debug.Log(_wave.name);
+        
+        
 
 
+        if (resetCount == 1)
+        {
+            waveDisplay.text = "Spawning wave: " + _wave.name;
+            
+        }
+        else
+        {
+            waveDisplay.text = "Spawning wave: " + resetCount + "x " + _wave.name; 
+        }
 
-
-        waveDisplay.text = "Spawning wave: " + _wave.name;
-
-         if (_wave.enemy[0] != null || _wave.enemy[1] != null || _wave.enemy[2] != null)
-         {
-             for (int index0 = 0; index0 < _wave.count[0] * countMultiplayer; index0++)
-             {
-                 Debug.Log("Tried to spawn enemy: 0");
-                 SpawnEnemy(_wave.enemy[0]);
-                 yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
-             }
-             for (int index1 = 0; index1 < _wave.count[1] * countMultiplayer; index1++)
-             {
-                 Debug.Log("Tried to spawn enemy: 1");
-                 SpawnEnemy(_wave.enemy[1]);
-                 yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
-             }
-             for (int index2 = 0; index2 < _wave.count[2] * countMultiplayer; index2++)
-             {
-                 Debug.Log("Tried to spawn enemy: 2");
-                 SpawnEnemy(_wave.enemy[2]);
-                 yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
-             }
-         }
+        if (_wave.enemy[0] != null || _wave.enemy[1] != null || _wave.enemy[2] != null)
+        {
+            for (int index0 = 0; index0 < _wave.count[0] * countMultiplayer; index0++)
+            {
+                SpawnEnemy(_wave.enemy[0]);
+                yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
+            }
+            for (int index1 = 0; index1 < _wave.count[1] * countMultiplayer; index1++)
+            {
+                SpawnEnemy(_wave.enemy[1]);
+                yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
+            }
+            for (int index2 = 0; index2 < _wave.count[2] * countMultiplayer; index2++)
+            {
+                SpawnEnemy(_wave.enemy[2]);
+                yield return new WaitForSeconds(1f / _wave.rate * rateMultiplayer);
+            }
+        }
         StartNewWave();
         IsFirstWave = false;
         yield break;

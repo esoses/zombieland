@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EscameMenu : MonoBehaviour
 {
@@ -47,5 +48,11 @@ public class EscameMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void GoMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+        Resume();
     }
 }
