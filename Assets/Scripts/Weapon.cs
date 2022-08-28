@@ -9,39 +9,109 @@ public class Weapon : MonoBehaviour
 
     public GameObject bullet;
     public Transform firePoint;
+
     public float fireForce;
     public float weaponRecoil;
-    public int fireRate;
+    public float fireRate;
     public int bulletsPerShot;
     public float manaUsage = 0.14f;
-    public AudioSource AudioSource;
+    public bool isFullAuto;
+    public int maxAmmo;
+    public float reloadTime;
 
-    private int counter = 0;
+    public AudioSource shotAudio;
+    public AudioSource reloadAudio;
 
 
+    private float reloadCounter;
+    private int ammoPool;
+    private float semiCounter;
+    private int counter;
+
+    public void Awake()
+    {
+        if(gameObject.activeInHierarchy == false)
+        {
+            gameObject.SetActive(false);
+        }
+        semiCounter = fireRate;
+        ammoPool = maxAmmo;
+        reloadCounter = reloadTime;
+        counter = 0;
+    }
 
     public void Fire()
     {
-        if (counter % fireRate == 0)
-        {
-            if (AudioSource.isPlaying == false && AudioSource != null)
+        if (isFullAuto)
+        {            
+            if (counter % fireRate == 0 && ammoPool > 0)
             {
-                AudioSource.Play();
+                
+                
+                shotAudio.Play();
+                
+
+                for (int i = 0; i < bulletsPerShot; i++)
+                {
+                    float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
+
+                    GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
+                    projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+                    firePoint.rotation = qnt;
+                }
+
+                ammoPool -= 1;
             }
+            counter++;
 
-            for (int i = 0; i < bulletsPerShot; i++)
+        }
+        if (!isFullAuto)
+        {
+
+            if (semiCounter <= 0 && ammoPool > 0)
             {
-                float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
+                semiCounter = fireRate;
+                shotAudio.Play();
 
-                GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
-                projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+                for (int i = 0; i < bulletsPerShot; i++)
+                {
+                    float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
 
-                firePoint.rotation = qnt;
+                    GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
+                    projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
+
+                    firePoint.rotation = qnt;
+                }
+
+                ammoPool -= 1;
             }
         }
-        counter++;
     }
-    
+
+    private void Update()
+    {
+        if (semiCounter > 0)
+        {
+            semiCounter -= Time.deltaTime;
+        }
+        Debug.Log(ammoPool);
+        if (ammoPool == 0)
+        {
+            if (reloadCounter == reloadTime)
+            {
+                reloadAudio.Play();
+            }            
+                     
+            reloadCounter -= Time.deltaTime;
+
+            if (reloadCounter <= 0)
+            {
+                ammoPool = maxAmmo;
+                reloadCounter = reloadTime;               
+            }
+        }
+    }
 }
 
 

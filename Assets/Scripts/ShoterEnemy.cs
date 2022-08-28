@@ -16,9 +16,7 @@ public class ShoterEnemy : EnemyController
         {
             base.MoveCharacter(direction);
         }
-    }
-
-    
+    }    
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -33,8 +31,7 @@ public class ShoterEnemy : EnemyController
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
-        {
-           
+        {           
             state = State.CHASING;
         }
     }

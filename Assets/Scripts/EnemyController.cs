@@ -7,8 +7,6 @@ using Random = UnityEngine.Random;
 
 public class EnemyController : MonoBehaviour
 {
-
-
     protected Vector2 move;
     protected Rigidbody2D enemy;
     protected GameObject player;
@@ -33,10 +31,7 @@ public class EnemyController : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {
-
-        
-
+    {      
         if (hitPoints <= 0)
         {
             KillEnemy();
@@ -44,7 +39,6 @@ public class EnemyController : MonoBehaviour
         ChasePlayer();
         MoveCharacter(move);
     }
-
 
     virtual protected void MoveCharacter(Vector2 direction)
     {
@@ -64,7 +58,7 @@ public class EnemyController : MonoBehaviour
 
     virtual protected void ChasePlayer()
     {
-        if (player != null)
+        if (player != null && player.activeSelf)
         {
             Vector2 direction = player.GetComponent<Transform>().position - transform.position;            
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;

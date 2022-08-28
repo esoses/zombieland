@@ -36,7 +36,5 @@ public class HealthBar : MonoBehaviour
             default:
                 break;
         }
-
     }
-
 }

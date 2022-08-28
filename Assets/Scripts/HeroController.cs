@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class HeroController : MonoBehaviour
 {
@@ -20,15 +21,19 @@ public class HeroController : MonoBehaviour
     public float hpRegen = 1f;
     public HealthBar hp;
 
-    
+    public TextMeshProUGUI dieDisplay;
 
     public float damageTakenPerFrame = 1;
     
     public static int switcher;
     public static int hpswitcher;
 
+    public EscameMenu EscameMenu;
+
     void Start()
     {
+        dieDisplay.text = "";
+
         mana = maxMana;
         health = maxHealth;
 
@@ -55,18 +60,29 @@ public class HeroController : MonoBehaviour
     }
 
     public void PlayerFire()
-    { 
-        if (Input.GetMouseButton(0))
+    {
+        if (weapon.isFullAuto == true)
         {
-            if (mana > 0)
+            if (Input.GetMouseButton(0))
             {
+                if (mana > 0)
+                {
+                    weapon.Fire();
+                    mana -= weapon.manaUsage;
+                }
+            }
+            if (Input.GetMouseButton(0) == false)
+            {
+                weapon.shotAudio.Stop();
+            }
+        }
+        if (weapon.isFullAuto == false)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {               
                 weapon.Fire();
                 mana -= weapon.manaUsage;
             }
-        }
-        if (Input.GetMouseButton(0) == false)
-        {
-            weapon.AudioSource.Stop();
         }
     }    
 
@@ -74,18 +90,12 @@ public class HeroController : MonoBehaviour
     {
         if (EscameMenu.GameIsPaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                SceneManager.LoadScene("World 1");
-            }
+            
             mn.SetMana(mana);
             FaceMouse();
             MoveHero();                       
             PlayerFire();
-            
-            
-
-
+                       
             if (mana < maxMana)
             {
                
@@ -140,10 +150,19 @@ public class HeroController : MonoBehaviour
 
             if (health <= 0)
             {
-                Destroy(gameObject);
+                Invoke("MenuAfterDeath", 2);
+                dieDisplay.text = "You Died";
+                gameObject.SetActive(false);                 
             }
         }
     }
+
+    void MenuAfterDeath()
+    {
+        
+        SceneManager.LoadScene("Main Menu");
+    }
+    
 
     void MoveHero()
     {

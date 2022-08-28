@@ -155,3 +155,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForAttackinEnemies: 1
   bulletDamage: 0.25
+  timeToDestroyAfterHit: 1
+  timeUntilBulletDisapears: 1

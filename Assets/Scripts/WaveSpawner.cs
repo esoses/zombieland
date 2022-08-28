@@ -32,6 +32,8 @@ public class WaveSpawner : MonoBehaviour
     private float rateMultiplayer = 1;
 
     private int resetCount = 1;
+    public int waveFromZero;
+    public int highestWave;
 
     private void Start()
     {
@@ -45,10 +47,7 @@ public class WaveSpawner : MonoBehaviour
     }
 
     private void Update()
-    {
-       
-        
-
+    {               
         if (waveCountdown <= 0)
         {
             if (state != SpawnState.SPAWNING)
@@ -72,7 +71,6 @@ public class WaveSpawner : MonoBehaviour
 
     void StartNewWave()
     {
-
         state = SpawnState.COUNTING;
         
         if (nextWave + 1 > waves.Length - 1)
@@ -85,7 +83,14 @@ public class WaveSpawner : MonoBehaviour
         }
         else
         {
-            nextWave++;            
+            nextWave++;
+            waveFromZero++;
+            if (waveFromZero > highestWave)
+            {
+                highestWave = waveFromZero;
+                PlayerPrefs.SetInt("Highest Score", highestWave);
+                PlayerPrefs.Save();
+            }
         }
         if (nextWave - 1 != 0)
         {
@@ -96,14 +101,10 @@ public class WaveSpawner : MonoBehaviour
     IEnumerator SpawnWave(Wave _wave)
     {
         state = SpawnState.SPAWNING;
-        
-        
-
-
+                
         if (resetCount == 1)
         {
-            waveDisplay.text = "Spawning wave: " + _wave.name;
-            
+            waveDisplay.text = "Spawning wave: " + _wave.name;            
         }
         else
         {

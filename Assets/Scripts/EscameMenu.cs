@@ -54,5 +54,5 @@ public class EscameMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
         Resume();
-    }
+    }    
 }

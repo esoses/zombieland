@@ -37,7 +37,6 @@ public class ManaBar : MonoBehaviour
             default:
                 break;
         }
-
     }
 }
 

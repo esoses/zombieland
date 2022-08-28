@@ -103,10 +103,14 @@ MonoBehaviour:
   firePoint: {fileID: 6307415030055826111}
   fireForce: 9
   weaponRecoil: 5
-  fireRate: 5
+  fireRate: 1
   bulletsPerShot: 1
   manaUsage: 0
-  AudioSource: {fileID: 5886904783300142422}
+  isFullAuto: 1
+  maxAmmo: 999
+  reloadTime: 1
+  shotAudio: {fileID: 5886904783300142422}
+  reloadAudio: {fileID: 5886904783300142422}
 --- !u!82 &5886904783300142422
 AudioSource:
   m_ObjectHideFlags: 0
@@ -117,7 +121,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 70e3198afc62bb341b1d96b88c8c68ec, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0
   m_Pitch: 1
