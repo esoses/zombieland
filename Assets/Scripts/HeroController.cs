@@ -10,18 +10,18 @@ public class HeroController : MonoBehaviour
     private Vector2 move = new Vector2();
     public float moveSpeed = 4;
 
-    public Weapon weapon;
+    int selectedWeapon;
+    private Weapon weapon;
+    public GameObject[] weapons;
     
-    public float maxMana = 100;
-    public float mana;
-    public float manaRegen = 1f;
-    public ManaBar mn;
     public float maxHealth = 100;
     public float health;
     public float hpRegen = 1f;
     public HealthBar hp;
 
     public TextMeshProUGUI dieDisplay;
+    public TextMeshProUGUI ammoNow;
+    public TextMeshProUGUI ammoMax;
 
     public float damageTakenPerFrame = 1;
     
@@ -32,14 +32,19 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            weapons[i].SetActive(false);            
+            weapon = weapons[0].GetComponent<Weapon>();
+            weapon.gameObject.SetActive(true);
+        }
+
+            
         dieDisplay.text = "";
 
-        mana = maxMana;
         health = maxHealth;
-
         rb2d = GetComponent<Rigidbody2D>();
         hp.SetMaxHealth(health);
-        mn.SetMaxMana(mana);
 
         Application.targetFrameRate = 60;
     }
@@ -64,62 +69,68 @@ public class HeroController : MonoBehaviour
         if (weapon.isFullAuto == true)
         {
             if (Input.GetMouseButton(0))
-            {
-                if (mana > 0)
-                {
-                    weapon.Fire();
-                    mana -= weapon.manaUsage;
-                }
-            }
-            if (Input.GetMouseButton(0) == false)
-            {
-                weapon.shotAudio.Stop();
-            }
+            {                               
+                weapon.Fire();                                               
+            }            
         }
         if (weapon.isFullAuto == false)
         {
             if (Input.GetMouseButtonDown(0))
             {               
-                weapon.Fire();
-                mana -= weapon.manaUsage;
+                weapon.Fire();                
             }
         }
     }    
+
+    void SelectWeapon()
+    {
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weapon = weapons[0].GetComponent<Weapon>();
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                weapons[i].SetActive(false);               
+            }
+            weapons[0].SetActive(true);
+            if (weapon.ammoPool == 0)
+            {
+                weapon.reloadCounter = weapon.reloadTime;
+                weapon.reloadAudio.Play();
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weapon = weapons[1].GetComponent<Weapon>();
+            for (int i = 0; i < weapons.Length; i++)
+            {
+                weapons[i].SetActive(false);
+            }
+            weapons[1].SetActive(true);
+            if (weapon.ammoPool == 0)
+            {
+                weapon.reloadCounter = weapon.reloadTime;
+                weapon.reloadAudio.Play();
+            }
+        }
+        
+    }
 
     public void Update()
     {
         if (EscameMenu.GameIsPaused == false)
         {
-            
-            mn.SetMana(mana);
+            SelectWeapon();
+
+
+            ammoMax.text = weapon.maxAmmo.ToString();
+            ammoNow.text = weapon.ammoPool.ToString();
+
             FaceMouse();
             MoveHero();                       
             PlayerFire();
-                       
-            if (mana < maxMana)
+            if (Input.GetKeyDown(KeyCode.R))
             {
-               
-                if (mana < maxMana / 4)
-                {
-                    mana += manaRegen * 0.03f;
-                    switcher = 0;
-                }
-                else if (mana < maxMana / 4)
-                {
-                    mana += manaRegen * 0.04f;
-                    switcher = 1;
-                }
-                else if (mana < maxMana / 3)
-                {
-                    mana += manaRegen * 0.06f;
-                    switcher = 2;
-                }
-                else
-                {
-                    mana += manaRegen * 0.07f;
-                    switcher = 3;
-                }
-                mn.AddRegenMana(manaRegen);
+                weapon.ForceReload();
             }
 
             if (health < maxHealth)

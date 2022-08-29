@@ -13,8 +13,7 @@ public class Weapon : MonoBehaviour
     public float fireForce;
     public float weaponRecoil;
     public float fireRate;
-    public int bulletsPerShot;
-    public float manaUsage = 0.14f;
+    public int bulletsPerShot;    
     public bool isFullAuto;
     public int maxAmmo;
     public float reloadTime;
@@ -23,17 +22,14 @@ public class Weapon : MonoBehaviour
     public AudioSource reloadAudio;
 
 
-    private float reloadCounter;
-    private int ammoPool;
+    [HideInInspector] public float reloadCounter;
+    [HideInInspector] public int ammoPool;
     private float semiCounter;
     private int counter;
 
     public void Awake()
     {
-        if(gameObject.activeInHierarchy == false)
-        {
-            gameObject.SetActive(false);
-        }
+        
         semiCounter = fireRate;
         ammoPool = maxAmmo;
         reloadCounter = reloadTime;
@@ -88,9 +84,11 @@ public class Weapon : MonoBehaviour
             }
         }
     }
+    
 
     private void Update()
     {
+        
         if (semiCounter > 0)
         {
             semiCounter -= Time.deltaTime;
@@ -98,19 +96,29 @@ public class Weapon : MonoBehaviour
         Debug.Log(ammoPool);
         if (ammoPool == 0)
         {
-            if (reloadCounter == reloadTime)
-            {
-                reloadAudio.Play();
-            }            
-                     
-            reloadCounter -= Time.deltaTime;
-
-            if (reloadCounter <= 0)
-            {
-                ammoPool = maxAmmo;
-                reloadCounter = reloadTime;               
-            }
+            Reload();
         }
+    }
+
+    public void Reload()
+    {
+        if (reloadCounter == reloadTime)
+        {
+            reloadAudio.Play();
+        }
+
+        reloadCounter -= Time.deltaTime;
+
+        if (reloadCounter <= 0)
+        {
+            ammoPool = maxAmmo;
+            reloadCounter = reloadTime;
+        }
+    }
+
+    public void ForceReload()
+    {
+        ammoPool = 0;
     }
 }
 

@@ -137,12 +137,12 @@ MonoBehaviour:
   weaponRecoil: 1
   fireRate: 0.3
   bulletsPerShot: 1
-  manaUsage: 0
   isFullAuto: 0
   maxAmmo: 10
   reloadTime: 3
   shotAudio: {fileID: 615966796}
   reloadAudio: {fileID: 615966797}
+  ammoPool: 0
 --- !u!82 &615966796
 AudioSource:
   m_ObjectHideFlags: 0

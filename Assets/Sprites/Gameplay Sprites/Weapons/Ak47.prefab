@@ -106,12 +106,12 @@ MonoBehaviour:
   weaponRecoil: 5
   fireRate: 15
   bulletsPerShot: 1
-  manaUsage: 0
   isFullAuto: 1
   maxAmmo: 25
   reloadTime: 3
   shotAudio: {fileID: 4525210863760928799}
   reloadAudio: {fileID: 4525210863760928798}
+  ammoPool: 0
 --- !u!82 &4525210863760928799
 AudioSource:
   m_ObjectHideFlags: 0
@@ -124,7 +124,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 780b61659b17fc548a135e2d519fb679, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.046
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -220,7 +220,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 187e1b110dd093e45b1d48f44402f94f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.4
+  m_Volume: 0.23
   m_Pitch: 1
   Loop: 0
   Mute: 0
