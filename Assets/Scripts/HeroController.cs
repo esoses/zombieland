@@ -13,12 +13,15 @@ public class HeroController : MonoBehaviour
     int selectedWeapon;
     private Weapon weapon;
     public GameObject[] weapons;
+    public Transform[] weaponTrans;
+    Transform[] weaponssss;
     
     public float maxHealth = 100;
     public float health;
     public float hpRegen = 1f;
     public HealthBar hp;
 
+ 
     public TextMeshProUGUI dieDisplay;
     public TextMeshProUGUI ammoNow;
     public TextMeshProUGUI ammoMax;
@@ -32,14 +35,17 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
+
+        
+        weapons = GameObject.FindGameObjectsWithTag("Weapon");
+
         for (int i = 0; i < weapons.Length; i++)
         {
             weapons[i].SetActive(false);            
             weapon = weapons[0].GetComponent<Weapon>();
             weapon.gameObject.SetActive(true);
-        }
-
-            
+        }      
+        
         dieDisplay.text = "";
 
         health = maxHealth;
@@ -117,10 +123,14 @@ public class HeroController : MonoBehaviour
 
     public void Update()
     {
+        if (EscameMenu.GameIsPaused == true)
+        {
+            weapon.reloadAudio.Pause();
+        }
         if (EscameMenu.GameIsPaused == false)
         {
+            weapon.reloadAudio.UnPause();
             SelectWeapon();
-
 
             ammoMax.text = weapon.maxAmmo.ToString();
             ammoNow.text = weapon.ammoPool.ToString();
@@ -180,7 +190,7 @@ public class HeroController : MonoBehaviour
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
         move.Normalize();
-        rb2d.velocity = move * moveSpeed;
+        rb2d.velocity = move * moveSpeed * (1 - weapon.movementPenaltyInPercent / 100);
     }
 
     void FaceMouse()

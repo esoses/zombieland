@@ -30,7 +30,7 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {       
-        SceneManager.LoadScene("World 1");
+        SceneManager.LoadScene("Pre Game Menu");
     }
     public void QuitGame()
     {

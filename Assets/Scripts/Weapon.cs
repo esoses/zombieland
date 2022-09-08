@@ -2,22 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+
 public class Weapon : MonoBehaviour
 {
-    private Quaternion qnt = new Quaternion(0, 0, 0, 0);
+    [System.Serializable]
+    public class Upgrade
+    {
+        public string upName;
+        public int upgradeNumber;
+        public float[] upgradeStates;
+        public int[] upgradeCosts;
+        public int upgradeLevel;
+    }
+    
 
+    public Upgrade[] upgrades;
+
+    private Quaternion qnt = new Quaternion(0, 0, 0, 0);
 
     public GameObject bullet;
     public Transform firePoint;
 
-    public float fireForce;
-    public float weaponRecoil;
-    public float fireRate;
-    public int bulletsPerShot;    
-    public bool isFullAuto;
-    public int maxAmmo;
-    public float reloadTime;
+    public float damage; //1
+    public float fireForce; //2 
+    public float weaponRecoil; //3
+    public float fireRate; //4
+    public int bulletsPerShot; //5
+    public int maxAmmo; //6
+    public float reloadTime; //7 
+    public float movementPenaltyInPercent; //8
 
+    public bool isFullAuto; 
+    
     public AudioSource shotAudio;
     public AudioSource reloadAudio;
 
@@ -27,9 +43,50 @@ public class Weapon : MonoBehaviour
     private float semiCounter;
     private int counter;
 
-    public void Awake()
+    public void UpdateStats(Upgrade upgrade)
     {
-        
+        if (upgrade.upgradeNumber == 1)
+        {            
+            damage = upgrade.upgradeStates[upgrade.upgradeLevel];            
+            bullet.GetComponent<Bullet>().damage = damage;
+        }
+        if (upgrade.upgradeNumber == 2)
+        {
+            fireForce = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 3)
+        {
+            weaponRecoil = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 4)
+        {
+            fireRate = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 5)
+        {
+            bulletsPerShot = (int)upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 6)
+        {
+            maxAmmo = (int)upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 7)
+        {
+            reloadTime = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if (upgrade.upgradeNumber == 8)
+        {
+            movementPenaltyInPercent = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+    }
+
+
+    public void Start()
+    {
+        for (int i = 0; i < upgrades.Length; i++)
+        {
+            UpdateStats(upgrades[i]);
+        }
         semiCounter = fireRate;
         ammoPool = maxAmmo;
         reloadCounter = reloadTime;
@@ -88,12 +145,16 @@ public class Weapon : MonoBehaviour
 
     private void Update()
     {
-        
+        for (int i = 0; i < upgrades.Length; i++)
+        {          
+            UpdateStats(upgrades[i]);
+        }
+
         if (semiCounter > 0)
         {
             semiCounter -= Time.deltaTime;
         }
-        Debug.Log(ammoPool);
+        
         if (ammoPool == 0)
         {
             Reload();

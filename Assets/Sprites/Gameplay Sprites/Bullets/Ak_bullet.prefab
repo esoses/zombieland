@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isForAttackinEnemies: 1
-  bulletDamage: 10
+  gun: {fileID: 6320339787172654159, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
   timeToDestroyAfterHit: 0
   timeUntilBulletDisapears: 1.5
 --- !u!61 &8615199925211347437

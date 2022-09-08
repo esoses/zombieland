@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1000217367}
   m_Layer: 6
   m_Name: Staff
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,18 +100,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd12fd775a310a4aab4a6d40c7f6995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades: []
   bullet: {fileID: 3173845393505104667, guid: 5a6bfb99923e8c940a1656f3d29f7b65, type: 3}
   firePoint: {fileID: 9022237054494942971}
+  damage: 0.5
   fireForce: 5
   weaponRecoil: 10
   fireRate: 1
   bulletsPerShot: 5
-  manaUsage: 0.14
-  isFullAuto: 1
   maxAmmo: 999999
   reloadTime: 10
+  movementPenaltyInPercent: 0
+  isFullAuto: 1
   shotAudio: {fileID: 9022237054129727667}
   reloadAudio: {fileID: 1000217367}
+  reloadCounter: 0
+  ammoPool: 0
 --- !u!82 &9022237054129727667
 AudioSource:
   m_ObjectHideFlags: 0

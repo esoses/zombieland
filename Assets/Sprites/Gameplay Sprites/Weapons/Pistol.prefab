@@ -46,7 +46,7 @@ GameObject:
   - component: {fileID: 615966797}
   m_Layer: 0
   m_Name: Pistol
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,17 +131,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd12fd775a310a4aab4a6d40c7f6995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades:
+  - upName: firerate
+    upgradeNumber: 4
+    upgradeStates:
+    - 0.75
+    - 0.69
+    - 0.6
+    - 0.5
+    - 0.43
+    - 0.33
+    upgradeCosts: 000000000a0000000e00000013000000170000001e000000
+    upgradeLevel: 0
+  - upName: mag size
+    upgradeNumber: 6
+    upgradeStates:
+    - 10
+    - 11
+    - 13
+    - 16
+    - 18
+    - 21
+    upgradeCosts: 000000000600000007000000090000000f00000014000000
+    upgradeLevel: 0
+  - upName: damage
+    upgradeNumber: 1
+    upgradeStates:
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 17
+    upgradeCosts: 00000000090000000e000000110000001400000019000000
+    upgradeLevel: 0
+  - upName: movement penalty
+    upgradeNumber: 8
+    upgradeStates:
+    - 8
+    - 7
+    - 5.5
+    - 3.5
+    - 1
+    - 0
+    upgradeCosts: 0000000006000000090000000c0000000f00000014000000
+    upgradeLevel: 0
   bullet: {fileID: 2207786685080019646, guid: aa61ebb3c4ac16341837c9db2fda8215, type: 3}
   firePoint: {fileID: 7255312501053707801}
+  damage: 15
   fireForce: 10
   weaponRecoil: 1
   fireRate: 0.3
   bulletsPerShot: 1
-  isFullAuto: 0
-  maxAmmo: 10
+  maxAmmo: 20
   reloadTime: 3
+  movementPenaltyInPercent: 3
+  isFullAuto: 0
   shotAudio: {fileID: 615966796}
   reloadAudio: {fileID: 615966797}
+  reloadCounter: 3
   ammoPool: 0
 --- !u!82 &615966796
 AudioSource:

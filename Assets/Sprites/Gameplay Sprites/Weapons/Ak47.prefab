@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4525210863760928798}
   m_Layer: 0
   m_Name: Ak47
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,17 +100,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcd12fd775a310a4aab4a6d40c7f6995, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upgrades:
+  - upName: firerate
+    upgradeNumber: 4
+    upgradeStates:
+    - 26
+    - 22
+    - 19
+    - 16
+    - 14
+    - 12
+    upgradeCosts: 0000000014000000170000001a0000001e00000028000000
+    upgradeLevel: 0
+  - upName: mag size
+    upgradeNumber: 6
+    upgradeStates:
+    - 25
+    - 27
+    - 30
+    - 34
+    - 39
+    - 45
+    upgradeCosts: 000000000a0000000d00000010000000190000001e000000
+    upgradeLevel: 0
+  - upName: damage
+    upgradeNumber: 1
+    upgradeStates:
+    - 5
+    - 7
+    - 9
+    - 12
+    - 15
+    upgradeCosts: 000000000f000000130000001a00000021000000
+    upgradeLevel: 0
+  - upName: reload speed
+    upgradeNumber: 7
+    upgradeStates:
+    - 4
+    - 3.6
+    - 3.1
+    - 2.5
+    upgradeCosts: 000000000d0000000f00000014000000
+    upgradeLevel: 0
   bullet: {fileID: 8668322116199804648, guid: 9a6f2fc9efd2fbc47b90aec7986ad820, type: 3}
   firePoint: {fileID: 6520309603115355722}
-  fireForce: 10
-  weaponRecoil: 5
-  fireRate: 15
+  damage: 1
+  fireForce: 15
+  weaponRecoil: 7
+  fireRate: 12
   bulletsPerShot: 1
-  isFullAuto: 1
   maxAmmo: 25
   reloadTime: 3
+  movementPenaltyInPercent: 10
+  isFullAuto: 1
   shotAudio: {fileID: 4525210863760928799}
   reloadAudio: {fileID: 4525210863760928798}
+  reloadCounter: 3
   ammoPool: 0
 --- !u!82 &4525210863760928799
 AudioSource:
@@ -220,7 +265,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 187e1b110dd093e45b1d48f44402f94f, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.23
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 0
   Mute: 0

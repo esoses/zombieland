@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/World 1.unity
     guid: 7bfba4fdf9315014592d8151ab3760c1
+  - enabled: 1
+    path: Assets/Scenes/Pre Game Menu.unity
+    guid: 91afeea315cafe545a46e44064094417
   m_configObjects: {}

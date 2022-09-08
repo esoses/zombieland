@@ -9,6 +9,8 @@ TagManager:
   - Damaging Wall
   - Bullet
   - Bullet2
+  - Weapon
+  - Money Text
   layers:
   - Default
   - TransparentFX

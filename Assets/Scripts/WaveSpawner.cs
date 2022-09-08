@@ -10,6 +10,11 @@ public class WaveSpawner : MonoBehaviour
     public TextMeshProUGUI waveDisplay;
     private bool IsFirstWave = true;
 
+    private Bank Bank;
+    private float moneyMultiplayer = 1;
+    public MoneyTextInGame moneyTextInGame;
+    private IEnumerator cashCoroutine;
+
     [System.Serializable]
     public class Wave
     {
@@ -19,6 +24,7 @@ public class WaveSpawner : MonoBehaviour
         public float rate;
         public int timeUntilNextWave;
     }
+
 
     public Wave[] waves;
     public Transform[] SpawnPoints;
@@ -34,11 +40,13 @@ public class WaveSpawner : MonoBehaviour
     private int resetCount = 1;
     public int waveFromZero;
     public int highestWave;
+    
 
     private void Start()
     {
-        
+        Bank = Bank.sharedInstace;
         waveCountdown = 10f;
+        
 
         if (SpawnPoints.Length == 0)
         {
@@ -71,6 +79,12 @@ public class WaveSpawner : MonoBehaviour
 
     void StartNewWave()
     {
+        int addedMoney = (int)(10 * moneyMultiplayer);
+        Debug.Log(addedMoney);
+        cashCoroutine = moneyTextInGame.ShowGainedMoney(addedMoney);
+        StartCoroutine(cashCoroutine);
+        Bank.money += addedMoney;
+        
         state = SpawnState.COUNTING;
         
         if (nextWave + 1 > waves.Length - 1)
@@ -80,9 +94,11 @@ public class WaveSpawner : MonoBehaviour
             countMultiplayer += 0.5f;
             rateMultiplayer += 0.5f;
             resetCount += 1;
+            moneyMultiplayer += 0.6f;
         }
         else
         {
+            moneyMultiplayer += 0.3f;
             nextWave++;
             waveFromZero++;
             if (waveFromZero > highestWave)
