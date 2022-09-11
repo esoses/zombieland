@@ -10,25 +10,26 @@ public class upgradeMenager : MonoBehaviour
 
     public Weapon[] weapons;
     public Weapon selectedWeapon;
+    private int currentSelInt = 0;
    
     public TextMeshProUGUI[] upNames;
     public TextMeshProUGUI[] currentValues;
     public TextMeshProUGUI[] newValues;
     public TextMeshProUGUI[] costs;
 
-    private int updatedWeaponNumber;
+    //private int updatedWeaponNumber;
 
-    void UpdateShowedStats(int updatedWeaponNumber)
+    void UpdateShowedStats(Weapon updatedWeapon)
     {
-        
-        this.updatedWeaponNumber = updatedWeaponNumber;
 
-        for (int i = 0; i < weapons[updatedWeaponNumber].upgrades.Length; i++)
+        
+
+        for (int i = 0; i < updatedWeapon.upgrades.Length; i++)
         {
             
-            Weapon.Upgrade u = weapons[updatedWeaponNumber].upgrades[i];
-            PlayerPrefs.GetInt("uplvl" + updatedWeaponNumber + i);
-            PlayerPrefs.SetInt("uplvl" + updatedWeaponNumber + i, u.upgradeLevel);
+            Weapon.Upgrade u = updatedWeapon.upgrades[i];
+            PlayerPrefs.GetInt("uplvl" + updatedWeapon + i);
+            PlayerPrefs.SetInt("uplvl" + updatedWeapon + i, u.upgradeLevel);
 
             int nextLevel = u.upgradeLevel + 1 >= u.upgradeStates.Length ? u.upgradeStates.Length - 1 : u.upgradeLevel + 1;
 
@@ -40,7 +41,8 @@ public class upgradeMenager : MonoBehaviour
                 
             currentValues[i].text = u.upgradeStates[nextLevel - 1].ToString();            
             newValues[i].text = u.upgradeStates[nextLevel].ToString();                    
-                                   
+                        
+            
         }       
     }
 
@@ -57,15 +59,16 @@ public class upgradeMenager : MonoBehaviour
 
     private void Start()
     {
-        GetUpLevels();
-        bank = Bank.sharedInstace;
         
-        UpdateShowedStats(0);
+        selectedWeapon = weapons[currentSelInt];
+        GetUpLevels();
+        bank = Bank.sharedInstace;        
+        UpdateShowedStats(selectedWeapon);
     }
 
     public void UpgradeStat(int abc)
     {
-        Weapon.Upgrade u = weapons[updatedWeaponNumber].upgrades[abc];
+        Weapon.Upgrade u = selectedWeapon.upgrades[abc];
         int nextLevel = u.upgradeLevel + 1 >= u.upgradeStates.Length ? u.upgradeStates.Length - 1 : u.upgradeLevel + 1;
         if (u.upgradeLevel < u.upgradeStates.Length - 1)
         {
@@ -74,34 +77,51 @@ public class upgradeMenager : MonoBehaviour
                 u.upgradeLevel += 1;
                 bank.money -= u.upgradeCosts[nextLevel];
 
-                UpdateShowedStats(updatedWeaponNumber);
+                UpdateShowedStats(selectedWeapon);
                
                 bank.SetMoney();
                 
             }
             else
             {
-                UpdateShowedStats(updatedWeaponNumber);
+                UpdateShowedStats(selectedWeapon);
                 Debug.Log("Not enough money");
             }
         }
         else
         {
-            UpdateShowedStats(updatedWeaponNumber);
+            UpdateShowedStats(selectedWeapon);
             Debug.Log("Maxed out");
         }
     }
 
     public void ResetStats()
     {
-        for (int i = 0; i < weapons[updatedWeaponNumber].upgrades.Length; i++)
+        for (int i = 0; i < selectedWeapon.upgrades.Length; i++)
         {
             weapons[0].upgrades[i].upgradeLevel = 0;
         }
-        UpdateShowedStats(updatedWeaponNumber);
+        UpdateShowedStats(selectedWeapon);
     } 
 
-    
+    public void ChangeWeapon(int isToRight01)
+    {
+        
+        if (isToRight01 == 1 && currentSelInt + 1 != weapons.Length)
+        {
+            currentSelInt += 1;
+            
+        }
+        if (isToRight01 == 0 && currentSelInt - 1 != -1)
+        {
+            currentSelInt -= 1;
+            
+        }
+
+        selectedWeapon = weapons[currentSelInt];
+        UpdateShowedStats(selectedWeapon);
+        
+    }
 
     public void Update()
     {
