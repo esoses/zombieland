@@ -4379,7 +4379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapons:
-  - {fileID: 6320339787172654159, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
+  - {fileID: 1312549696227647252, guid: 91bf267e9472cdf4992f8ae67d191034, type: 3}
   upNames:
   - {fileID: 497901635}
   - {fileID: 544252874}

@@ -9,7 +9,7 @@ public class upgradeMenager : MonoBehaviour
     private Bank bank;
 
     public Weapon[] weapons;
-
+    public Weapon selectedWeapon;
    
     public TextMeshProUGUI[] upNames;
     public TextMeshProUGUI[] currentValues;

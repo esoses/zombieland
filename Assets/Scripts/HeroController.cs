@@ -12,9 +12,7 @@ public class HeroController : MonoBehaviour
 
     int selectedWeapon;
     private Weapon weapon;
-    public GameObject[] weapons;
-    public Transform[] weaponTrans;
-    Transform[] weaponssss;
+    public GameObject[] weapons;    
     
     public float maxHealth = 100;
     public float health;
