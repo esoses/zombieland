@@ -111,7 +111,7 @@ MonoBehaviour:
     - 43
     - 35
     upgradeCosts: 000000002800000032000000410000004f00000064000000
-    upgradeLevel: 4
+    upgradeLevel: 0
   - upName: bullets velocity
     upgradeNumber: 2
     upgradeStates:
@@ -119,7 +119,7 @@ MonoBehaviour:
     - 8
     - 10
     upgradeCosts: 000000001e00000028000000
-    upgradeLevel: 2
+    upgradeLevel: 0
   - upName: movement penalty
     upgradeNumber: 8
     upgradeStates:
@@ -138,10 +138,10 @@ MonoBehaviour:
     - 13
     - 17
     upgradeCosts: 00000000230000003200000046000000
-    upgradeLevel: 3
+    upgradeLevel: 0
   bullet: {fileID: 5787989922537094602, guid: f43869a7e9cac7c49a08acdf48043c87, type: 3}
   firePoint: {fileID: 2305153048164564241}
-  damage: 0.15
+  damage: 4
   fireForce: 7
   weaponRecoil: 25
   fireRate: 10

@@ -4,14 +4,22 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    public GameObject[] weapons;
+    public GameObject[] primaryWeapons;
+    public GameObject[] secondaryWeapons;
+    private int primaryWeaponNumber;
+    private int secondaryWeaponNumber;
+
 
     void Awake()
     {
-        for (int i = 0; i < weapons.Length; i++)
-        {
-            Instantiate(weapons[i], gameObject.transform);
-        }
+        primaryWeaponNumber = PlayerPrefs.GetInt("Primary");
+        secondaryWeaponNumber = PlayerPrefs.GetInt("Secondary");
+
+        
+       
+        Instantiate(primaryWeapons[primaryWeaponNumber], gameObject.transform);
+        Instantiate(secondaryWeapons[secondaryWeaponNumber], gameObject.transform);
+        
     } 
 
     

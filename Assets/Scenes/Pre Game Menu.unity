@@ -482,9 +482,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6038a3031329441acc4cc6ad0ee2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  primary: 0
   weapons:
   - {fileID: 7600559682250486812, guid: 5c7cb1de144c7304095fe4ebb9d1e1c7, type: 3}
   selectedWeapon: {fileID: 0}
+  weaponName: {fileID: 275064815}
   upNames:
   - {fileID: 910351619}
   - {fileID: 2099442904}
@@ -1025,7 +1027,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3476,7 +3478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4516,10 +4518,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f6038a3031329441acc4cc6ad0ee2ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  primary: 1
   weapons:
   - {fileID: 6320339787172654159, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
   - {fileID: 1312549696227647252, guid: 91bf267e9472cdf4992f8ae67d191034, type: 3}
   selectedWeapon: {fileID: 0}
+  weaponName: {fileID: 1251187633}
   upNames:
   - {fileID: 497901635}
   - {fileID: 544252874}

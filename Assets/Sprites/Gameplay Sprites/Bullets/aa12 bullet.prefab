@@ -125,7 +125,7 @@ MonoBehaviour:
   gun: {fileID: 1312549696227647252, guid: 91bf267e9472cdf4992f8ae67d191034, type: 3}
   timeToDestroyAfterHit: 0
   timeUntilBulletDisapears: 1.5
-  damage: 0
+  damage: 3
 --- !u!61 &6886097895899851471
 BoxCollider2D:
   m_ObjectHideFlags: 0

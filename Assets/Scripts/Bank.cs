@@ -23,11 +23,9 @@ public class Bank : MonoBehaviour
 
     private void Start()
     {
-
+        
         DontDestroyOnLoad(gameObject);       
-        money = GetMoney();
-        
-        
+        money = GetMoney();               
     }
 
    

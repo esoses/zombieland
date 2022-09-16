@@ -48,7 +48,7 @@ public class Weapon : MonoBehaviour
         if (upgrade.upgradeNumber == 1)
         {            
             damage = upgrade.upgradeStates[upgrade.upgradeLevel];            
-            bullet.GetComponent<Bullet>().damage = damage;
+            bullet.GetComponent<Bullet>().damage = damage;            
         }
         if (upgrade.upgradeNumber == 2)
         {
@@ -83,6 +83,7 @@ public class Weapon : MonoBehaviour
 
     public void Start()
     {
+        bullet.GetComponent<Bullet>().damage = damage;
         for (int i = 0; i < upgrades.Length; i++)
         {
             UpdateStats(upgrades[i]);

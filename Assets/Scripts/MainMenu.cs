@@ -11,6 +11,9 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
+        
+
+
         highestScoreShow = PlayerPrefs.GetInt("Highest Score");
         
 
