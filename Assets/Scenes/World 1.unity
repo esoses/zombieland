@@ -86680,6 +86680,7 @@ MonoBehaviour:
   - {fileID: 5834186671609212204, guid: 2aef3a7d06b872349b31e291ad3376f4, type: 3}
   secondaryWeapons:
   - {fileID: 8467847365155259696, guid: 5c7cb1de144c7304095fe4ebb9d1e1c7, type: 3}
+  - {fileID: 6527286719998342909, guid: de19b3e626faa154fb03b5a3cefea257, type: 3}
 --- !u!1 &1910576088
 GameObject:
   m_ObjectHideFlags: 0

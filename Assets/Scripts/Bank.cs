@@ -25,10 +25,10 @@ public class Bank : MonoBehaviour
     {
         
         DontDestroyOnLoad(gameObject);       
-        money = GetMoney();               
+        money = GetMoney();          
     }
 
-   
+    
 
     
 

@@ -33,7 +33,7 @@ public class HeroController : MonoBehaviour
 
     void Start()
     {
-
+        maxHealth = 100 * PlayerPrefs.GetFloat("multi2" , 1);
         
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
 
