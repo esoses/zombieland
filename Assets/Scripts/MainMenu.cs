@@ -29,6 +29,21 @@ public class MainMenu : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            if (Screen.fullScreen == true)
+            {
+                Screen.fullScreen = false;
+            }
+            else
+            {
+                Screen.fullScreen = true;
+            }
+        }
+    }
+
 
 
     public void PlayGame()
