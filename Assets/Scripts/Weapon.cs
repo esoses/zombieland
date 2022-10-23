@@ -32,8 +32,9 @@ public class Weapon : MonoBehaviour
     public float reloadTime; //7 
     public float movementPenaltyInPercent; //8
 
-    public bool isFullAuto; 
-    
+    public bool isFullAuto;
+
+    private float realReloadTime;
     public AudioSource shotAudio;
     public AudioSource reloadAudio;
 
@@ -83,14 +84,17 @@ public class Weapon : MonoBehaviour
 
     public void Start()
     {
-        bullet.GetComponent<Bullet>().damage = damage;
         for (int i = 0; i < upgrades.Length; i++)
         {
             UpdateStats(upgrades[i]);
         }
+        realReloadTime = reloadTime * (PlayerPrefs.GetFloat("multi4", 1));
+        Debug.Log(realReloadTime);
+        bullet.GetComponent<Bullet>().damage = damage * PlayerPrefs.GetFloat("multi1", 1);
+        
         semiCounter = fireRate;
         ammoPool = maxAmmo;
-        reloadCounter = reloadTime;
+        reloadCounter = realReloadTime;
         counter = 0;
     }
 
@@ -164,7 +168,7 @@ public class Weapon : MonoBehaviour
 
     public void Reload()
     {
-        if (reloadCounter == reloadTime)
+        if (reloadCounter == realReloadTime)
         {
             reloadAudio.Play();
         }
@@ -174,7 +178,7 @@ public class Weapon : MonoBehaviour
         if (reloadCounter <= 0)
         {
             ammoPool = maxAmmo;
-            reloadCounter = reloadTime;
+            reloadCounter = realReloadTime;
         }
     }
 

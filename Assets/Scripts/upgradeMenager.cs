@@ -59,8 +59,7 @@ public class upgradeMenager : MonoBehaviour
             {
                 if (primary)
                 {
-                    weapons[weaponNumber].upgrades[upgradeNumber].upgradeLevel = PlayerPrefs.GetInt("uplvl" + primary + weaponNumber + upgradeNumber);
-                    Debug.Log(PlayerPrefs.GetInt("uplvl" + primary + weaponNumber + upgradeNumber));
+                    weapons[weaponNumber].upgrades[upgradeNumber].upgradeLevel = PlayerPrefs.GetInt("uplvl" + primary + weaponNumber + upgradeNumber);                  
                 }
                 if (!primary)
                 {
@@ -108,13 +107,13 @@ public class upgradeMenager : MonoBehaviour
             else
             {
                 UpdateShowedStats(selectedWeapon);
-                Debug.Log("Not enough money");
+                //Debug.Log("Not enough money");
             }
         }
         else
         {
             UpdateShowedStats(selectedWeapon);
-            Debug.Log("Maxed out");
+            //Debug.Log("Maxed out");
         }
     }
 

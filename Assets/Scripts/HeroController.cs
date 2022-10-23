@@ -9,6 +9,7 @@ public class HeroController : MonoBehaviour
     private Rigidbody2D rb2d;
     private Vector2 move = new Vector2();
     public float moveSpeed = 4;
+    private float realmoveSpeed;
 
     int selectedWeapon;
     private Weapon weapon;
@@ -34,6 +35,7 @@ public class HeroController : MonoBehaviour
     void Start()
     {
         maxHealth = 100 * PlayerPrefs.GetFloat("multi2" , 1);
+        realmoveSpeed = moveSpeed * PlayerPrefs.GetFloat("multi3", 1);
         
         weapons = GameObject.FindGameObjectsWithTag("Weapon");
 
@@ -188,7 +190,7 @@ public class HeroController : MonoBehaviour
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
         move.Normalize();
-        rb2d.velocity = move * moveSpeed * (1 - weapon.movementPenaltyInPercent / 100);
+        rb2d.velocity = move * realmoveSpeed * (1 - weapon.movementPenaltyInPercent / 100);
     }
 
     void FaceMouse()

@@ -9,4 +9,8 @@ public class MenuMenager : MonoBehaviour
     {
         SceneManager.LoadScene("World 1");
     }
+    public void LoadTree()
+    {
+        SceneManager.LoadScene(3);
+    }
 }

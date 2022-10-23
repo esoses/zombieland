@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Pre Game Menu.unity
     guid: 91afeea315cafe545a46e44064094417
+  - enabled: 1
+    path: Assets/Scenes/tree.unity
+    guid: 5e6e454abe7179244b229075c6645040
   m_configObjects: {}
