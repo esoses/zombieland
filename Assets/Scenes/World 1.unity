@@ -82461,7 +82461,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 486507288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1199.74, y: 256.02, z: -10}
+  m_LocalPosition: {x: 1198.7, y: 255, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86678,6 +86678,7 @@ MonoBehaviour:
   - {fileID: 5426574897974156643, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
   - {fileID: 1066885183846657592, guid: 91bf267e9472cdf4992f8ae67d191034, type: 3}
   - {fileID: 5834186671609212204, guid: 2aef3a7d06b872349b31e291ad3376f4, type: 3}
+  - {fileID: 3808114378104937814, guid: 79dcdfc0e56d31f428730592b3da23fb, type: 3}
   secondaryWeapons:
   - {fileID: 8467847365155259696, guid: 5c7cb1de144c7304095fe4ebb9d1e1c7, type: 3}
   - {fileID: 6527286719998342909, guid: de19b3e626faa154fb03b5a3cefea257, type: 3}
@@ -87469,6 +87470,10 @@ PrefabInstance:
       propertyPath: ammoNow
       value: 
       objectReference: {fileID: 1910576090}
+    - target: {fileID: 2242304560846086709, guid: bb5a283d7f4ac1542809c002dd4f48b6, type: 3}
+      propertyPath: viewRange
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2242304560846086709, guid: bb5a283d7f4ac1542809c002dd4f48b6, type: 3}
       propertyPath: EscameMenu
       value: 

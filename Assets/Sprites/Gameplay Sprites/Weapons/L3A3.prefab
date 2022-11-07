@@ -150,7 +150,10 @@ MonoBehaviour:
   maxAmmo: 15
   reloadTime: 2
   movementPenaltyInPercent: 10
+  enemiesPierced: 0
+  timeUntilBulletDisappears: 1.2
   isFullAuto: 1
+  dpesPierceInfinietly: 0
   shotAudio: {fileID: 3392972899451689857}
   reloadAudio: {fileID: 3392972899451689856}
   reloadCounter: 3

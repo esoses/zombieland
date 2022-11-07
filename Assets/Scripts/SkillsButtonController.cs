@@ -10,7 +10,7 @@ public class SkillsButtonController : MonoBehaviour
     private int indexOfStat;
     [HideInInspector] public bool bought = false;
     public GameObject[] befors;
-
+    public bool isOrUpgrade;
 
     public void GetIndex(int index)
     {
@@ -21,10 +21,19 @@ public class SkillsButtonController : MonoBehaviour
         bool canBeBought = true;
         for (int i = 0; i < befors.Length; i++)
         {
-            if (befors[i].GetComponent<SkillsButtonController>().bought == false)
+            if (befors[i].GetComponent<SkillsButtonController>().bought == true)
+            {
+                if (isOrUpgrade) // nie dziala
+                {
+                    canBeBought = true;
+                    break;
+                }
+            }
+            else
             {
                 canBeBought = false;
                 break;
+                
             }
         }
         if (canBeBought) // i exp

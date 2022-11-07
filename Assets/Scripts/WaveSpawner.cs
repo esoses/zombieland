@@ -80,7 +80,7 @@ public class WaveSpawner : MonoBehaviour
     void StartNewWave()
     {
         int addedMoney = (int)(10 * moneyMultiplayer);
-        Debug.Log(addedMoney);
+        //Debug.Log(addedMoney);
         cashCoroutine = moneyTextInGame.ShowGainedMoney(addedMoney);
         StartCoroutine(cashCoroutine);
         Bank.money += addedMoney;
@@ -89,7 +89,7 @@ public class WaveSpawner : MonoBehaviour
         
         if (nextWave + 1 > waves.Length - 1)
         {
-            nextWave = 1;
+            nextWave = 5;
             Debug.Log("All waves completed! Reseting wave count...");
             countMultiplayer += 0.5f;
             rateMultiplayer += 0.5f;

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2063571413584986947}
   - component: {fileID: 8000428045819625296}
   - component: {fileID: 4470342748054982963}
-  - component: {fileID: 8615199925211347437}
   - component: {fileID: 1326550472863430045}
   m_Layer: 8
   m_Name: Ak_bullet
@@ -125,32 +124,7 @@ MonoBehaviour:
   gun: {fileID: 6320339787172654159, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
   timeToDestroyAfterHit: 0
   timeUntilBulletDisapears: 1.5
---- !u!61 &8615199925211347437
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8668322116199804648}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 0.2, y: 0.2}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.03, y: 0.06}
-  m_EdgeRadius: 0
+  damage: 0
 --- !u!61 &1326550472863430045
 BoxCollider2D:
   m_ObjectHideFlags: 0

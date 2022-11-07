@@ -10,11 +10,15 @@ public class Bullet : MonoBehaviour
     public float timeToDestroyAfterHit;
     public float timeUntilBulletDisapears;
     public float damage;
+    private int pierceCounter;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        timeUntilBulletDisapears = gun.timeUntilBulletDisappears;
         Destroy(gameObject, timeUntilBulletDisapears);
+        pierceCounter = gun.enemiesPierced;
+
     }
 
     
@@ -28,8 +32,17 @@ public class Bullet : MonoBehaviour
     {
         if (collision.tag == "Enemy" && !collision.isTrigger)
         {
-            collision.gameObject.GetComponent<EnemyController>().DamageEnemy(damage);                                  
-            Destroy(gameObject, timeToDestroyAfterHit);            
+            collision.gameObject.GetComponent<EnemyController>().DamageEnemy(damage);       
+            if(gun.dpesPierceInfinietly == false && pierceCounter > 0)
+            {
+                pierceCounter--;
+            }
+            else if (gun.dpesPierceInfinietly == false)
+            {
+                Destroy(gameObject, timeToDestroyAfterHit);   
+            }
+            
+                     
         }
         if (collision.tag == "Player" && !collision.isTrigger && !isForAttackinEnemies)
         {

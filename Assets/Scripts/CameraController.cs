@@ -7,6 +7,10 @@ public class CameraController : MonoBehaviour
     public float smoothSpeed = 10f;
     public Vector3 offSet;
 
+    private void Start()
+    {
+        gameObject.GetComponent<Camera>().orthographicSize = target.gameObject.GetComponent<HeroController>().viewRange;
+    }
     private void LateUpdate()
     {
         if (target != null)

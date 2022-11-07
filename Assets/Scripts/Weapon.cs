@@ -31,12 +31,17 @@ public class Weapon : MonoBehaviour
     public int maxAmmo; //6
     public float reloadTime; //7 
     public float movementPenaltyInPercent; //8
+    public int enemiesPierced;
+    public float timeUntilBulletDisappears;
 
     public bool isFullAuto;
+    public bool dpesPierceInfinietly;
+    public bool hasAnimation;
 
     private float realReloadTime;
     public AudioSource shotAudio;
     public AudioSource reloadAudio;
+    public Animation animation;
 
 
     [HideInInspector] public float reloadCounter;
@@ -89,9 +94,13 @@ public class Weapon : MonoBehaviour
             UpdateStats(upgrades[i]);
         }
         realReloadTime = reloadTime * (PlayerPrefs.GetFloat("multi4", 1));
-        Debug.Log(realReloadTime);
+        //Debug.Log(realReloadTime);
         bullet.GetComponent<Bullet>().damage = damage * PlayerPrefs.GetFloat("multi1", 1);
         
+        if(hasAnimation)
+        {
+            animation = gameObject.GetComponent<Animation>();
+        }
         semiCounter = fireRate;
         ammoPool = maxAmmo;
         reloadCounter = realReloadTime;
@@ -107,7 +116,7 @@ public class Weapon : MonoBehaviour
                 
                 
                 shotAudio.Play();
-                
+                if (hasAnimation) animation.Play();
 
                 for (int i = 0; i < bulletsPerShot; i++)
                 {
@@ -129,6 +138,7 @@ public class Weapon : MonoBehaviour
 
             if (semiCounter <= 0 && ammoPool > 0)
             {
+                if (hasAnimation)  animation.Play();
                 semiCounter = fireRate;
                 shotAudio.Play();
 
