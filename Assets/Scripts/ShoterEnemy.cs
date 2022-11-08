@@ -14,6 +14,7 @@ public class ShoterEnemy : EnemyController
     {
         if (state == State.CHASING)
         {
+            
             base.MoveCharacter(direction);
         }
     }    
@@ -24,7 +25,6 @@ public class ShoterEnemy : EnemyController
         {
             state = State.SHOOTING;
             weapon.Fire();
-            
         }
     }
 

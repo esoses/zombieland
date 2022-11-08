@@ -119,20 +119,7 @@ public class HeroController : MonoBehaviour
                 weapon.reloadAudio.Play();
             }
         }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            weapon = weapons[2].GetComponent<Weapon>();
-            for (int i = 0; i < weapons.Length; i++)
-            {
-                weapons[i].SetActive(false);
-            }
-            weapons[2].SetActive(true);
-            if (weapon.ammoPool == 0)
-            {
-                weapon.reloadCounter = weapon.reloadTime;
-                weapon.reloadAudio.Play();
-            }
-        }
+       
     }
 
     public void Update()

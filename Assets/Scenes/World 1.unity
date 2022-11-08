@@ -83011,7 +83011,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 050000000000000000000000
+    count: 050000000000000005000000
     rate: 0.7
     timeUntilNextWave: 30
   - name: 1
@@ -83019,8 +83019,8 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000000000001000000
-    rate: 5
+    count: 640000000000000005000000
+    rate: 10
     timeUntilNextWave: 10
   - name: 2
     enemy:

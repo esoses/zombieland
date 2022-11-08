@@ -47,7 +47,14 @@ public class Bullet : MonoBehaviour
         if (collision.tag == "Player" && !collision.isTrigger && !isForAttackinEnemies)
         {
             collision.gameObject.GetComponent<HeroController>().DamagePlayer(damage);
-            Destroy(gameObject);
+            if (gun.dpesPierceInfinietly == false && pierceCounter > 0)
+            {
+                pierceCounter--;
+            }
+            else if (gun.dpesPierceInfinietly == false)
+            {
+                Destroy(gameObject, timeToDestroyAfterHit);
+            }
         }
     }
 }

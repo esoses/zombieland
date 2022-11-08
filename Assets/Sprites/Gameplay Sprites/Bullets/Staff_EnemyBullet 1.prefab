@@ -155,6 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isForAttackinEnemies: 0
   gun: {fileID: 9022237054129727676, guid: 22e2269f17665cd4bac75f29b76339ac, type: 3}
-  timeToDestroyAfterHit: 0
-  timeUntilBulletDisapears: 1
+  timeToDestroyAfterHit: 3
+  timeUntilBulletDisapears: 2
   damage: 0.5

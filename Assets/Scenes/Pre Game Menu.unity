@@ -4524,6 +4524,7 @@ MonoBehaviour:
   - {fileID: 6320339787172654159, guid: 26ffe0ba2c40a7b47838b43037d9ef31, type: 3}
   - {fileID: 1312549696227647252, guid: 91bf267e9472cdf4992f8ae67d191034, type: 3}
   - {fileID: 5480453377473731584, guid: 2aef3a7d06b872349b31e291ad3376f4, type: 3}
+  - {fileID: 2891426733057911930, guid: 79dcdfc0e56d31f428730592b3da23fb, type: 3}
   selectedWeapon: {fileID: 0}
   weaponName: {fileID: 1251187633}
   upNames:

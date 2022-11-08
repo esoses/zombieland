@@ -45,7 +45,7 @@ public class WaveSpawner : MonoBehaviour
     private void Start()
     {
         Bank = Bank.sharedInstace;
-        waveCountdown = 10f;
+        waveCountdown = 5f;
         
 
         if (SpawnPoints.Length == 0)

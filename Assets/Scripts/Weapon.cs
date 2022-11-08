@@ -84,6 +84,14 @@ public class Weapon : MonoBehaviour
         {
             movementPenaltyInPercent = upgrade.upgradeStates[upgrade.upgradeLevel];
         }
+        if(upgrade.upgradeNumber == 33)
+        {
+            shotAudio.volume = upgrade.upgradeStates[upgrade.upgradeLevel];
+        }
+        if(upgrade.upgradeNumber == 34)
+        {
+
+        }
     }
 
 
@@ -110,28 +118,28 @@ public class Weapon : MonoBehaviour
     public void Fire()
     {
         if (isFullAuto)
-        {            
+        { 
             if (counter % fireRate == 0 && ammoPool > 0)
             {
-                
-                
-                shotAudio.Play();
-                if (hasAnimation) animation.Play();
+               
 
+                if (shotAudio != null) shotAudio.Play();
+                if (hasAnimation) animation.Play();
                 for (int i = 0; i < bulletsPerShot; i++)
                 {
                     float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
-
+                    
                     GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
                     projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-
+                    
                     firePoint.rotation = qnt;
+                    
                 }
 
                 ammoPool -= 1;
             }
             counter++;
-
+            
         }
         if (!isFullAuto)
         {
@@ -147,8 +155,7 @@ public class Weapon : MonoBehaviour
                     float scatterOffset = Random.Range(-weaponRecoil, weaponRecoil);
 
                     GameObject projectile = Instantiate(bullet, firePoint.position, firePoint.rotation *= Quaternion.Euler(0f, 0f, scatterOffset));
-                    projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);
-
+                    projectile.GetComponent<Rigidbody2D>().AddForce(firePoint.up * fireForce, ForceMode2D.Impulse);               
                     firePoint.rotation = qnt;
                 }
 

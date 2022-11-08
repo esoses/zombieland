@@ -19,7 +19,6 @@ public class WeaponSpawner : MonoBehaviour
        
         Instantiate(primaryWeapons[primaryWeaponNumber], gameObject.transform);
         Instantiate(secondaryWeapons[secondaryWeaponNumber], gameObject.transform);
-        Instantiate(primaryWeapons[3], gameObject.transform);
 
     } 
 
