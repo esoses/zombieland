@@ -83010,16 +83010,16 @@ MonoBehaviour:
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
-    - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 050000000000000005000000
+    - {fileID: 1600437376588317569, guid: 0e4897341b83e544fba54a536122e5ac, type: 3}
+    count: 050000000000000000000000
     rate: 0.7
-    timeUntilNextWave: 30
+    timeUntilNextWave: 1
   - name: 1
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
-    - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 640000000000000005000000
+    - {fileID: 1600437376588317569, guid: 0e4897341b83e544fba54a536122e5ac, type: 3}
+    count: 070000000000000005000000
     rate: 10
     timeUntilNextWave: 10
   - name: 2
@@ -83027,7 +83027,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000100000000000000
+    count: 640000000a0000000a000000
     rate: 7
     timeUntilNextWave: 10
   - name: 3
@@ -83035,7 +83035,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 050000000000000000000000
+    count: 0a0000000000000002000000
     rate: 1
     timeUntilNextWave: 5
   - name: 4
@@ -83043,7 +83043,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 190000000100000000000000
+    count: 140000000200000000000000
     rate: 3
     timeUntilNextWave: 10
   - name: 5 - Hard
@@ -83051,7 +83051,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 000000000200000000000000
+    count: 000000000300000000000000
     rate: 1.5
     timeUntilNextWave: 5
   - name: 6
@@ -83059,7 +83059,7 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 010000001e00000000000000
+    count: 010000001e00000003000000
     rate: 2
     timeUntilNextWave: 10
   - name: 7
@@ -83067,16 +83067,16 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000100000000000000
-    rate: 10
-    timeUntilNextWave: 10
+    count: 0a0000000100000001000000
+    rate: 100
+    timeUntilNextWave: 3
   - name: 8
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 000000000000000000000000
-    rate: 0.75
+    count: 000000000500000000000000
+    rate: 0.5
     timeUntilNextWave: 10
   - name: 9
     enemy:
@@ -83091,31 +83091,31 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 030000000000000002000000
-    rate: 2
+    count: 010000000000000007000000
+    rate: 1
     timeUntilNextWave: 20
-  - name: 12 - Extreme
-    enemy:
-    - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
-    - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
-    - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000500000001000000
-    rate: 5
-    timeUntilNextWave: 5
   - name: 11 - Extreme
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000300000003000000
+    count: 0a0000000300000001000000
     rate: 10000
+    timeUntilNextWave: 5
+  - name: 12 - Extreme
+    enemy:
+    - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
+    - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
+    - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
+    count: 190000000500000001000000
+    rate: 5
     timeUntilNextWave: 5
   - name: 13 - Extreme
     enemy:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 0a0000000100000000000000
+    count: 0f0000000300000005000000
     rate: 1000
     timeUntilNextWave: 5
   - name: 14 - Extreme
@@ -83123,7 +83123,7 @@ MonoBehaviour:
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 460000000000000000000000
+    count: 320000000000000000000000
     rate: 5
     timeUntilNextWave: 20
   - name: 15 - Impossible
@@ -83131,8 +83131,8 @@ MonoBehaviour:
     - {fileID: 6600035242330995799, guid: 77c7b9b4dd2b3d24aa5b7ebb7abd21a6, type: 3}
     - {fileID: 258791824668582587, guid: fd07c2e23c57f73439f0c3c985cb2341, type: 3}
     - {fileID: 9177369397070941254, guid: 4d186671050870a419c2920ff7dbf202, type: 3}
-    count: 030000001e00000005000000
-    rate: 4
+    count: 060000001e0000000a000000
+    rate: 3
     timeUntilNextWave: 1
   SpawnPoints:
   - {fileID: 1412922752}

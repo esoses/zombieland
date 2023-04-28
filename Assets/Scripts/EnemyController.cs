@@ -25,23 +25,26 @@ public class EnemyController : MonoBehaviour
     {
         hitPoints = maxHitPoints;
         hpBar.SetMaxHealth(maxHitPoints);
-        enemy = GetComponent<Rigidbody2D>();      
+        enemy = gameObject.GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
         moveSpeed = Random.Range(moveSpeedRangeMin, moveSpeedRangeMax);
     }
 
     private void FixedUpdate()
-    {      
+    {
+        
         if (hitPoints <= 0)
         {
             KillEnemy();
         }
         ChasePlayer();
+        
         MoveCharacter(move);
     }
 
     virtual protected void MoveCharacter(Vector2 direction)
     {
+        
         enemy.MovePosition((Vector2)transform.position + (direction * moveSpeed * Time.deltaTime));        
     }
 
@@ -64,7 +67,9 @@ public class EnemyController : MonoBehaviour
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             enemy.rotation = angle;                       
             direction.Normalize();            
-            move = direction;            
+            move = direction;  
+
+           
         }                
     }
 }

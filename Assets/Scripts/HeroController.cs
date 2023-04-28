@@ -124,6 +124,7 @@ public class HeroController : MonoBehaviour
 
     public void Update()
     {
+       
         if (EscameMenu.GameIsPaused == true)
         {
             weapon.reloadAudio.Pause();
@@ -190,6 +191,7 @@ public class HeroController : MonoBehaviour
     {
         move.x = Input.GetAxisRaw("Horizontal");
         move.y = Input.GetAxisRaw("Vertical");
+        
         move.Normalize();
         rb2d.velocity = move * realmoveSpeed * (1 - weapon.movementPenaltyInPercent / 100);
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShoterEnemy : EnemyController
 {
-    public enum State { CHASING, SHOOTING}
+    public enum State {CHASING, SHOOTING}
 
     private State state = State.CHASING;
 

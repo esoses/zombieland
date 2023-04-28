@@ -1122,6 +1122,20 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5158715960606336049, guid: 11751dec466c7e24e90643516fc0bea4, type: 3}
   m_PrefabInstance: {fileID: 952487618}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &952487621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 952487620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bf5d846e698a442b8dd671fd5d6f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Reload Speed
+  content: +5% to reload speed
 --- !u!1 &962388845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1840,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1929491043}
     m_Modifications:
+    - target: {fileID: 449498699068039564, guid: 49bcb0d743cf1934a98d2edefec30859, type: 3}
+      propertyPath: m_Color.b
+      value: 0.08719444
+      objectReference: {fileID: 0}
+    - target: {fileID: 449498699068039564, guid: 49bcb0d743cf1934a98d2edefec30859, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 449498699237483265, guid: 49bcb0d743cf1934a98d2edefec30859, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2576,6 +2598,20 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4675612869902273961, guid: a3f6d214de8e7a846abe233380a96db8, type: 3}
   m_PrefabInstance: {fileID: 1938176055}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1938176058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1938176056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88bf5d846e698a442b8dd671fd5d6f26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  header: Movement Speed
+  content: +5% to movement speed
 --- !u!1 &2087894759
 GameObject:
   m_ObjectHideFlags: 0
